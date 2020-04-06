@@ -38,13 +38,28 @@
         <div class="modal-background"></div>
         <div class="modal-content">
             <!-- Any other Bulma elements you want -->
-            <p>HOLA SOY UN MODAL</p>
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-5">${name}</p>
+                            <p class="title is-6">${species} - ${planet}</p>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="buttons">
+                            <button class="button is-primary card_button">Episodios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <button class="modal-close is-large" aria-label="close"></button>
     </div>
+
     <script>
         const CardItem = props => {
-
             const {
                 image,
                 name,
@@ -66,22 +81,16 @@
                             </div>
                             <div class="card-content">
                                 <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-48x48">
-                                            <img src="${image}"
-                                                alt="Placeholder image">
-                                        </figure>
-                                    </div>
+
                                     <div class="media-content">
-                                        <p class="title is-4">${name}</p>
-                                        <p class="title is-6">${species}</p>
-                                        <p class="title is-6">${planet}</p>
+                                        <p class="title is-5">${name}</p>
+                                        <p class="title is-6">${species} - ${planet}</p>
                                     </div>
                                 </div>
 
                                 <div class="content">
                                     <div class="buttons">
-                                        <button class="button is-primary card_button">Primary</button>
+                                        <button id="${index}" class="button is-primary card_button">Episodios</button>
                                     </div>
                                 </div>
                             </div>
@@ -89,23 +98,6 @@
                     </div>
     `
         }
-
-        /* const $grid = document.querySelector('.grid');
-
-        const cardElement = CardItem({
-            image: '',
-            name: 'Lean',
-            species: 'Human',
-            origin: {
-                name: 'Earth',
-                url: ''
-            }
-        });
-        console.log(cardElement);
-
-        setTimeout(() => {
-            $grid.innerHTML += cardElement;
-        }, 5000); */
 
         const getCharacters = async (baseURL, from, to) => {
             //Array.from({length: 5}, (v, i) => i);
