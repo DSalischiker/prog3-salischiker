@@ -52,11 +52,11 @@
                         <div class="media-content">
 
                             <div class="media-content">
-
+                                <p id="p_origen" class="title is-5">Origen</p>
+                                <p id="p_planet_name" class="title is-6"></p>
+                                <p id="p_planet_type" class="title is-6"></p>
+                                <p id="p_planet_dimension" class="title is-6"></p>
                             </div>
-                            <p id="p_planet" class="title is-5"></p>
-
-
                         </div>
                     </div>
 
@@ -84,7 +84,7 @@
             } = props;
             const {
                 name: planet,
-                url
+                url: url
             } = origin;
 
 
@@ -92,7 +92,7 @@
                     <div class="column is-one-quarter">
                         <div class="card">
                             <div class="card-image">
-                            <p>${id}</p>
+
                                 <figure class="image is-3by3">
                                     <img src="${image}" alt="Placeholder image">
                                 </figure>
@@ -132,6 +132,19 @@
             return characters;
         }
 
+        const getEpisodes = async (url) => {
+            const response = await fetch(url);
+            const episode = await response.json();
+            /* console.log('data de episodio', episode); */
+            return episode;
+        }
+
+        const getLocation = async (url) => {
+            const response = await fetch(url);
+            const location = await response.json();
+            console.log('Location en getLocation', location);
+            return location;
+        }
         /* const getEpisodes = async (baseURL, from, to) => {
             const episodesRange = Array.from({
                 length: to - from + 1;
@@ -195,19 +208,52 @@
                     document.querySelector('html').classList.add('is-clipped');
 
                     //Mostrar data en modal
+                    const character = characters[boton.id - 1];
+
                     const $img_modal = document.querySelector('#img_modal');
                     const $name_modal = document.querySelector('#name_modal');
-                    const $p_planet = document.querySelector('#p_planet');
+
+                    const $p_planet_name = document.querySelector('#p_planet_name');
+                    const $p_planet_type = document.querySelector('#p_planet_type');
+                    const $p_planet_dimension = document.querySelector('#p_planet_dimension');
+                    //LOCATION
+                    console.log(character.origin.url);
+                    const fetchLocation = async () => {
+                        const locationURL = character.origin.url;
+                        const location = await getLocation(locationURL);
+                        $p_planet_name.innerHTML = 'Planeta: ' + location.name;
+                        $p_planet_type.innerHTML = 'Tipo: ' + location.type;
+                        $p_planet_dimension.innerHTML = 'Dimensión: ' + location
+                            .dimension;
+
+                    };
+                    fetchLocation();
+
+                    //EPISODES
                     const $ul_episodes = document.querySelector('.episode_list');
-                    const character = characters[boton.id - 1];
-                    $p_planet.innerHTML = 'Planeta: ' + character.origin.name;
+
+
+
+
                     $img_modal.src = character.image;
                     $name_modal.innerHTML = character.name;
-                    console.log(character);
-                    console.log($p_planet);
+                    /* console.log(character);
+                    console.log($p_planet_name); */
                     for (let i = 0; i < character.episode.length; i++) {
                         const li = `<li>${character.episode[i]}</li>`;
-                        $ul_episodes.innerHTML += li;
+
+                        //Fetch a api/episodes para buscar nombre del capítulo
+                        const fetchEpisode = async () => {
+                            /* console.log('entré a fetch'); */
+                            const episodeURL = character.episode[i];
+                            const episodes = await getEpisodes(episodeURL);
+                            /* console.log(episodes) */
+                            $ul_episodes.innerHTML +=
+                                `<li>${episodes.episode} "${episodes.name}"</li>`;
+                        }
+                        fetchEpisode();
+                        /* console.log(episodes); */
+                        /* $ul_episodes.innerHTML += episodes; */
                     }
 
                     /* $p_episodes.innerHTML = 'Episodios: ' + character.episode; */
@@ -216,6 +262,17 @@
                     $modalClose.addEventListener('click', () => {
                         $modal.classList.remove('is-active');
                         document.querySelector('html').classList.remove('is-clipped');
+                        const $img_modal = document.querySelector('#img_modal');
+                        const $name_modal = document.querySelector('#name_modal');
+                        const $p_planet = document.querySelector('#p_planet');
+                        const $ul_episodes = document.querySelector('.episode_list');
+                        $img_modal.src = '';
+                        $name_modal.innerHTML = '';
+                        $p_planet_name.innerHTML = '';
+                        $p_planet_type.innerHTML = '';
+                        $p_planet_dimension.innerHTML = '';
+                        $ul_episodes.innerHTML =
+                            '<p id="p_episodes" class="title is-5">Episodios</p>';
                     });
                 });
             })
