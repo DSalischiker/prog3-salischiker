@@ -4,31 +4,47 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>TP1 Rick and Morty API</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <body>
-    <section class="section">
+    <section class="section" style="padding-top: 1em;">
         <div class="container">
             <h1 class="title">
-                Hello World
+                TP1: Rick and Morty API
             </h1>
             <p class="subtitle">
-                My first website with <strong>Bulma</strong>!
+                Diego Salischiker. Programación Multimedial III. 2020
             </p>
             <div class="field is-grouped">
                 <p class="control">
-                    <input class="input input_search" type="text" placeholder="Find a repository">
+                    <input class="input input_search" type="text" placeholder="Buscá un personaje">
                 </p>
                 <p class="control">
-                    <a class="button is-info handle_search">
-                        Search
+                    <a class="button is-info handle_search has-background-primary">
+                        Buscar
                     </a>
                 </p>
             </div>
-            <div class="columns is-multiline grid">
+            <div class="tabs is-centered is-boxed">
+                <ul>
+                    <li id="tab_characters" class="is-active"><a>Personajes</a></li>
+                    <li id="tab_episodes"><a>Episodios</a></li>
+                    <li id="tab_locations"><a>Locaciones</a></li>
+                </ul>
+            </div>
+            <div id="characters_div" class="columns is-multiline grid">
+
+
+            </div>
+            <div id="episodes_div" class="columns is-multiline grid hidden">
+
+
+            </div>
+            <div id="locations_div" class="columns is-multiline grid hidden">
 
 
             </div>
@@ -53,17 +69,43 @@
 
                             <div class="media-content">
                                 <p id="p_origen" class="title is-5">Origen</p>
-                                <p id="p_planet_name" class="title is-6"></p>
-                                <p id="p_planet_type" class="title is-6"></p>
-                                <p id="p_planet_dimension" class="title is-6"></p>
+
+                                <div class="columns is-half is-3 .is-variable" style="margin-left: 1em;">
+                                    <div class="column is-one-third has-background-grey-lighter has-text-centered"
+                                        style="margin-right: 0.5em;width: fit-content">
+                                        <p id="p_planet_dimension" class="title is-6"></p>
+                                    </div>
+                                    <div class="column is-one-third has-background-grey-lighter has-text-centered"
+                                        style="margin-right: 0.5em;width: fit-content">
+                                        <p id="p_planet_type" class="title is-6"></p>
+                                    </div>
+                                    <div class="column is-one-third has-background-grey-lighter has-text-centered"
+                                        style="width: fit-content">
+                                        <p id="p_planet_name" class="title is-6"></p>
+                                    </div>
+
+
+                                </div>
+
+
+
+
                             </div>
                         </div>
                     </div>
 
                     <div class="content">
-
+                        <p id="p_episodes" class="title is-5">Episodios</p>
+                        <table class="table is-striped is-narrow is-hoverable">
+                            <tbody id="table_body">
+                                <tr>
+                                    <th>Número</th>
+                                    <th>Nombre</th>
+                                </tr>
+                            </tbody>
+                        </table>
                         <ul class="episode_list">
-                            <p id="p_episodes" class="title is-5">Episodios</p>
+
                         </ul>
                     </div>
                 </div>
@@ -73,7 +115,7 @@
     </div>
 
     <script>
-        const CardItem = props => {
+        const characterCardItem = props => {
             const {
                 id,
                 image,
@@ -101,20 +143,66 @@
                                 <div class="media">
 
                                     <div class="media-content">
-                                        <p class="title is-5">${name}</p>
-                                        <p class="title is-6">${species} - ${planet}</p>
+                                        <p class="title is-4">${name}</p>
+                                        <p class="title is-6">Especie: <b>${species}</b> </br></br> Planeta: <b>${planet}</b></p>
                                     </div>
                                 </div>
 
                                 <div class="content">
                                     <div class="buttons">
-                                        <button id=${id} class="button is-primary card_button">Episodios</button>
+                                        <button id=${id} class="button is-info card_button" >Episodios</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-    `
+    `;
+        }
+
+        const episodeCardItem = props => {
+            const {
+                id,
+                name,
+                air_date,
+                episode
+            } = props;
+
+            return `<div class="column is-one-quarter">
+                        <div class="card has-background-info ">
+                            <div class="card-content">
+                                <div class="media">
+
+                                    <div class="media-content ">
+                                        <p class="title is-4 has-text-white-bis">${episode}</p>
+                                        <p class="title is-6 has-text-white-bis">Nombre: <b>${name}</b> </br></br> Emisión: <b>${air_date}</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+        }
+
+        const locationCardItem = props => {
+            const {
+                id,
+                name,
+                type,
+                dimension
+            } = props;
+
+            return `<div class="column is-one-quarter">
+                        <div class="card has-background-success">
+                            <div class="card-content">
+                                <div class="media">
+
+                                    <div class="media-content">
+                                        <p class="title is-4 has-text-white">${name}</p>
+                                        <p class="title is-6 has-text-white">Tipo: <b>${type}</b> </br></br> Dimensión: <b>${dimension}</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
         }
 
         const getCharacters = async (baseURL, from, to) => {
@@ -125,13 +213,42 @@
 
             const url = `${baseURL}character/${charactersRange}`;
 
-
             const response = await fetch(url);
             const characters = await response.json();
             console.log(characters);
             return characters;
         }
+        //Function to get episodes for locations tab
+        const getEpisodesFull = async (baseURL, from, to) => {
+            //Array.from({length: 5}, (v, i) => i);
+            const episodesRange = Array.from({
+                length: to - from + 1
+            }, (_, index) => index + 1).join(',');
 
+            const url = `${baseURL}episode/${episodesRange}`;
+
+            const response = await fetch(url);
+            const episodesFull = await response.json();
+            console.log(episodesFull);
+            return episodesFull;
+        }
+
+        //Function to get locations for locations tab
+        const getLocationsFull = async (baseURL, from, to) => {
+            //Array.from({length: 5}, (v, i) => i);
+            const locationsRange = Array.from({
+                length: to - from + 1
+            }, (_, index) => index + 1).join(',');
+
+            const url = `${baseURL}location/${locationsRange}`;
+
+            const response = await fetch(url);
+            const locationsFull = await response.json();
+            console.log(locationsFull);
+            return locationsFull;
+        }
+
+        //Function to get episodes to show in modal
         const getEpisodes = async (url) => {
             const response = await fetch(url);
             const episode = await response.json();
@@ -139,24 +256,15 @@
             return episode;
         }
 
+        //Function to get locations to show in modal
         const getLocation = async (url) => {
             const response = await fetch(url);
             const location = await response.json();
             console.log('Location en getLocation', location);
             return location;
         }
-        /* const getEpisodes = async (baseURL, from, to) => {
-            const episodesRange = Array.from({
-                length: to - from + 1;
-            }, (_, index) => index + 1).join(',');
 
-            const url = `${baseURL}episode/${episodesRange}`;
-
-            const response = await fetch(url);
-            const episodes = await response.json();
-            return episodes;
-        } */
-
+        //Function to get characters filtered by search
         const getCharactersByQuery = async (baseURL, query) => {
             const url = `${baseURL}/character/?name=${query}`;
             const response = await fetch(url);
@@ -165,26 +273,46 @@
             return characters;
         }
 
+        //Function to append elements to characters div
         const appendElements = (characters, emptyGrid) => {
-            const $grid = document.querySelector('.grid');
+            const $characters_div = document.querySelector('#characters_div');
             if (emptyGrid) {
-                $grid.innerHTML = null;
+                $characters_div.innerHTML = null;
             }
             characters.forEach(character => {
-                const cardItemHtml = CardItem(character);
-                $grid.innerHTML += cardItemHtml;
+                const cardItemHtml = characterCardItem(character);
+                $characters_div.innerHTML += cardItemHtml;
             });
         }
 
+        const appendEpisodes = (episodesFull) => {
+            const $episodes_div = document.querySelector('#episodes_div');
+            episodesFull.forEach(episode => {
+                const cardItemHtml = episodeCardItem(episode);
+                $episodes_div.innerHTML += cardItemHtml;
+            })
+        }
+
+        const appendLocations = (locationsFull) => {
+            const $locations_div = document.querySelector('#locations_div');
+            locationsFull.forEach(location => {
+
+                const cardItemHtml = locationCardItem(location);
+                $locations_div.innerHTML += cardItemHtml;
+            })
+        }
         const main = async () => {
             //Parte 1: Obtener elementos de la api y mostrarlos en el dom
             const baseURL = 'https://rickandmortyapi.com/api/';
 
+            //Append ALL elements to divs
             const characters = await getCharacters(baseURL, 1, 20);
             appendElements(characters);
+            const episodesFull = await getEpisodesFull(baseURL, 1, 20);
+            appendEpisodes(episodesFull);
+            const locationsFull = await getLocationsFull(baseURL, 1, 20);
+            appendLocations(locationsFull);
 
-            /* const episodes = await getEpisodes(baseURL, 1, 20);
-            appendElements(episodes); */
             //Parte 2: Crear un buscador de personajes
 
             const $submitSearch = document.querySelector('.handle_search');
@@ -198,11 +326,11 @@
                 appendElements(charactersByQuery.results, true);
             });
 
+            //MODALS
             const $cardButtonArr = document.querySelectorAll('.card_button');
             const $modal = document.querySelector('.modal');
             const $modalClose = document.querySelector('.modal-close');
             $cardButtonArr.forEach((boton) => {
-                /* console.log(boton.id); */
                 boton.addEventListener('click', () => {
                     $modal.classList.add('is-active');
                     document.querySelector('html').classList.add('is-clipped');
@@ -221,19 +349,16 @@
                     const fetchLocation = async () => {
                         const locationURL = character.origin.url;
                         const location = await getLocation(locationURL);
-                        $p_planet_name.innerHTML = 'Planeta: ' + location.name;
-                        $p_planet_type.innerHTML = 'Tipo: ' + location.type;
-                        $p_planet_dimension.innerHTML = 'Dimensión: ' + location
-                            .dimension;
+                        $p_planet_name.innerHTML = location.name;
+                        $p_planet_type.innerHTML = location.type;
+                        $p_planet_dimension.innerHTML = location.dimension;
 
                     };
                     fetchLocation();
 
                     //EPISODES
                     const $ul_episodes = document.querySelector('.episode_list');
-
-
-
+                    const $table_body = document.querySelector('#table_body');
 
                     $img_modal.src = character.image;
                     $name_modal.innerHTML = character.name;
@@ -244,20 +369,15 @@
 
                         //Fetch a api/episodes para buscar nombre del capítulo
                         const fetchEpisode = async () => {
-                            /* console.log('entré a fetch'); */
                             const episodeURL = character.episode[i];
                             const episodes = await getEpisodes(episodeURL);
                             /* console.log(episodes) */
-                            $ul_episodes.innerHTML +=
-                                `<li>${episodes.episode} "${episodes.name}"</li>`;
+                            $table_body.innerHTML +=
+                                `<td>${episodes.episode}</td><td>${episodes.name}</td>`;
                         }
                         fetchEpisode();
-                        /* console.log(episodes); */
-                        /* $ul_episodes.innerHTML += episodes; */
+
                     }
-
-                    /* $p_episodes.innerHTML = 'Episodios: ' + character.episode; */
-
 
                     $modalClose.addEventListener('click', () => {
                         $modal.classList.remove('is-active');
@@ -268,18 +388,66 @@
                         const $ul_episodes = document.querySelector('.episode_list');
                         $img_modal.src = '';
                         $name_modal.innerHTML = '';
-                        $p_planet_name.innerHTML = '';
-                        $p_planet_type.innerHTML = '';
-                        $p_planet_dimension.innerHTML = '';
-                        $ul_episodes.innerHTML =
-                            '<p id="p_episodes" class="title is-5">Episodios</p>';
+                        /*  $p_planet_name.innerHTML = '';
+                         $p_planet_type.innerHTML = '';
+                         $p_planet_dimension.innerHTML = '';
+                         $ul_episodes.innerHTML =
+                             '<p id="p_episodes" class="title is-5">Episodios</p>'; */
+                        $table_body.innerHTML = `<tr>
+                                    <th>Número</th>
+                                    <th>Nombre</th>
+                                </tr>`;
                     });
                 });
             })
 
 
+            const $tab_characters = document.querySelector('#tab_characters');
+            const $tab_episodes = document.querySelector('#tab_episodes');
+            const $tab_locations = document.querySelector('#tab_locations');
 
+            const $div_characters = document.querySelector('#characters_div');
+            const $div_episodes = document.querySelector('#episodes_div');
+            const $div_locations = document.querySelector('#locations_div');
 
+            $tab_characters.addEventListener('click', async (event) => {
+                console.log("Apreté tab characters");
+                event.preventDefault();
+
+                $tab_characters.classList.add('is-active');
+                $tab_episodes.classList.remove('is-active');
+                $tab_locations.classList.remove('is-active');
+
+                $div_characters.classList.remove('hidden');
+                $div_episodes.classList.add('hidden');
+                $div_locations.classList.add('hidden');
+            });
+
+            $tab_episodes.addEventListener('click', async (event) => {
+                console.log("Apreté tab episodes");
+                event.preventDefault();
+
+                $tab_characters.classList.remove('is-active');
+                $tab_episodes.classList.add('is-active');
+                $tab_locations.classList.remove('is-active');
+
+                $div_characters.classList.add('hidden');
+                $div_episodes.classList.remove('hidden');
+                $div_locations.classList.add('hidden');
+            });
+
+            $tab_locations.addEventListener('click', async (event) => {
+                console.log("Apreté tab locations");
+                event.preventDefault();
+
+                $tab_characters.classList.remove('is-active');
+                $tab_episodes.classList.remove('is-active');
+                $tab_locations.classList.add('is-active');
+
+                $div_characters.classList.add('hidden');
+                $div_episodes.classList.add('hidden');
+                $div_locations.classList.remove('hidden');
+            });
         }
 
         main();
