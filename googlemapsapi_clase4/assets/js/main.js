@@ -45,9 +45,10 @@ const addMarker = (map, marker) => {
         content: contentString
     });
     const icons = {
-        'Birreria': './assets/beer.png',
-        'Restaurant': './assets/burger.png',
-        'Barcito Cheto': './assets/cheto.png'
+        'Librería': './assets/libreria.png',
+        'Librería y Café': './assets/libreria_cafe.png',
+        'Librería y Disquería': './assets/libreria_disq.png',
+        'Librería Café y Disquería': './assets/libreria_cafe_disq.png'
     };
     const markerItem = new google.maps.Marker({
         position: {
@@ -77,21 +78,26 @@ const fetchMarkers = async (map) => {
     }
 }
 
-const handleFilterBeer = document.querySelector('.beer');
-const handleFilterRestaurant = document.querySelector('.restaurant');
-const handleFilterCheto = document.querySelector('.cheto');
+const handleFilterLibreria = document.querySelector('.libreria');
+const handleFilterLibreriaCafe = document.querySelector('.libreria_cafe');
+const handleFilterLibreriaCafeDisq = document.querySelector('.libreria_cafe_disq');
+const handleFilterLibreriaDisq = document.querySelector('.libreria_disq');
 
-handleFilterBeer.addEventListener('click', (e) => {
+handleFilterLibreria.addEventListener('click', (e) => {
     e.preventDefault();
-    addMarkerFiltered('Birreria');
+    addMarkerFiltered('Librería');
 })
-handleFilterRestaurant.addEventListener('click', (e) => {
+handleFilterLibreriaCafe.addEventListener('click', (e) => {
     e.preventDefault();
-    addMarkerFiltered('Restaurant');
+    addMarkerFiltered('Librería y Café');
 })
-handleFilterCheto.addEventListener('click', (e) => {
+handleFilterLibreriaCafeDisq.addEventListener('click', (e) => {
     e.preventDefault();
-    addMarkerFiltered('Barcito Cheto');
+    addMarkerFiltered('Librería Café y Disquería');
+})
+handleFilterLibreriaDisq.addEventListener('click', (e) => {
+    e.preventDefault();
+    addMarkerFiltered('Librería y Disquería');
 })
 const addMarkerFiltered = (markerType) => {
     markersAll.forEach((marker) => {
