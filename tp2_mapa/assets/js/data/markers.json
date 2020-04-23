@@ -1,0 +1,78 @@
+[{
+        "lat": -34.5939,
+        "lng": -58.4427,
+        "name": "Mandrágora Libros y Cultura",
+        "description": "La librería más bella de VC",
+        "type": "Librería y Café"
+    },
+    {
+        "lat": -34.6009,
+        "lng": -58.4401,
+        "name": "Librería Rodríguez Villa Crespo",
+        "description": "La 2da mejor librería de VC",
+        "type": "Librería"
+    },
+    {
+        "lat": -34.6061,
+        "lng": -58.4277,
+        "name": "Librería Rodríguez Almagro",
+        "description": "Alta librería",
+        "type": "Librería"
+    },
+    {
+        "lat": -34.5868,
+        "lng": -58.4298,
+        "name": "Libros del Pasaje",
+        "description": "Hermoso café",
+        "type": "Librería y Café"
+    },
+    {
+        "lat": -34.5844,
+        "lng": -58.4361,
+        "name": "Eterna Cadencia",
+        "description": "Hermosa librería y café de la editorial",
+        "type": "Librería y Café"
+    },
+    {
+        "lat": -34.6183,
+        "lng": -58.3747,
+        "name": "Walrus Books",
+        "description": "Libros usados en inglés",
+        "type": "Librería"
+    },
+    {
+        "lat": -34.6197,
+        "lng": -58.3739,
+        "name": "Fedro Libros",
+        "description": "Librería y Disquería",
+        "type": "Librería y Disquería"
+    },
+    {
+        "lat": -34.5959,
+        "lng": -58.3942,
+        "name": "Ateneo Grand Splendid",
+        "description": "La librería más grande de latinoamérica",
+        "type": "Librería Café y Disquería"
+    },
+    {
+        "lat": -34.5747,
+        "lng": -58.4524,
+        "name": "Céspedes Libros",
+        "description": "La mejor librería de Colegiales",
+        "type": "Librería"
+    },
+    {
+        "lat": -34.5957,
+        "lng": -58.3915,
+        "name": "Waldhuter La Librería",
+        "description": "Editorial, distribuidora y librería",
+        "type": "Librería"
+    },
+    {
+        "lat": -34.6060,
+        "lng": -58.3863,
+        "name": "Ediciones La Parte Maldita",
+        "description": "Uruguay 239. 8vo B",
+        "type": "Librería"
+    }
+]
