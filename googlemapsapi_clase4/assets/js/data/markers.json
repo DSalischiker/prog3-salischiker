@@ -3,13 +3,20 @@
         "lng": -58.4427,
         "name": "Mandrágora Libros y Cultura",
         "description": "La librería más bella de VC",
+        "dirreccion": "Vera 1906",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
         "type": "Librería y Café"
+
     },
     {
         "lat": -34.6009,
         "lng": -58.4401,
         "name": "Librería Rodríguez Villa Crespo",
         "description": "La 2da mejor librería de VC",
+        "dirreccion": "Vera 1906",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
         "type": "Librería"
     },
     {
@@ -17,6 +24,9 @@
         "lng": -58.4277,
         "name": "Librería Rodríguez Almagro",
         "description": "Alta librería",
+        "dirreccion": "Vera 1906",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
         "type": "Librería"
     },
     {
@@ -24,6 +34,9 @@
         "lng": -58.4298,
         "name": "Libros del Pasaje",
         "description": "Hermoso café",
+        "dirreccion": "Vera 1906",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
         "type": "Librería y Café"
     },
     {
@@ -31,6 +44,9 @@
         "lng": -58.4361,
         "name": "Eterna Cadencia",
         "description": "Hermosa librería y café de la editorial",
+        "dirreccion": "Vera 1906",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
         "type": "Librería y Café"
     },
     {
@@ -38,6 +54,9 @@
         "lng": -58.3747,
         "name": "Walrus Books",
         "description": "Libros usados en inglés",
+        "dirreccion": "Vera 1906",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
         "type": "Librería"
     },
     {
@@ -45,6 +64,9 @@
         "lng": -58.3739,
         "name": "Fedro Libros",
         "description": "Librería y Disquería",
+        "dirreccion": "Vera 1906",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
         "type": "Librería y Disquería"
     },
     {
@@ -52,6 +74,9 @@
         "lng": -58.3942,
         "name": "Ateneo Grand Splendid",
         "description": "La librería más grande de latinoamérica",
+        "dirreccion": "Vera 1906",
+        "categoría": "Comercial",
+        "horarios": "10:00 - 20:00",
         "type": "Librería Café y Disquería"
     },
     {
@@ -59,6 +84,9 @@
         "lng": -58.4524,
         "name": "Céspedes Libros",
         "description": "La mejor librería de Colegiales",
+        "dirreccion": "Vera 1906",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
         "type": "Librería"
     },
     {
@@ -66,6 +94,9 @@
         "lng": -58.3915,
         "name": "Waldhuter La Librería",
         "description": "Editorial, distribuidora y librería",
+        "dirreccion": "Vera 1906",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
         "type": "Librería"
     },
     {
@@ -73,6 +104,9 @@
         "lng": -58.3863,
         "name": "Ediciones La Parte Maldita",
         "description": "Uruguay 239. 8vo B",
+        "dirreccion": "Vera 1906",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
         "type": "Librería"
     }
 ]
