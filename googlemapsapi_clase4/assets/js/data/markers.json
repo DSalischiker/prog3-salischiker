@@ -7,7 +7,6 @@
         "categoría": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería y Café"
-
     },
     {
         "lat": -34.6009,
@@ -105,6 +104,97 @@
         "name": "Ediciones La Parte Maldita",
         "description": "Uruguay 239. 8vo B",
         "dirreccion": "Vera 1906",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
+        "type": "Librería"
+    },
+
+    {
+        "lat": -34.5982,
+        "lng": -58.4411,
+        "name": "Gould",
+        "description": "Librería en Villa Crespo",
+        "dirreccion": "Acevedo 388",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
+        "type": "Librería"
+    },
+    {
+        "lat": -34.5982,
+        "lng": -58.4442,
+        "name": "La Internacional Argentina",
+        "description": "Librería ",
+        "dirreccion": "Padilla 865",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
+        "type": "Librería"
+    },
+    {
+        "lat": -34.6185,
+        "lng": -58.4375,
+        "name": "Cúspide Libros",
+        "description": "En Village Caballito",
+        "dirreccion": "Av. Rivadavia 5045",
+        "categoría": "Comercial",
+        "horarios": "10:00 - 20:00",
+        "type": "Librería"
+    },
+    {
+        "lat": -34.6031,
+        "lng": -58.4103,
+        "name": "Yenny",
+        "description": "Yenny Abasto",
+        "dirreccion": "Av. Corrientes 3247",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
+        "type": "Librería y Disqueria"
+    },
+    {
+        "lat": -34.6137,
+        "lng": -58.3749,
+        "name": "Witolda Libros",
+        "description": "Editorial Ilustración",
+        "dirreccion": "Venezuela 615",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
+        "type": "Librería"
+    },
+    {
+        "lat": -34.5897,
+        "lng": -58.4362,
+        "name": "La Casa del Árbol",
+        "description": "Uruguay 239. 8vo B",
+        "dirreccion": "Av. Córdoba 5217",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
+        "type": "Librería y Disquería"
+    },
+    {
+        "lat": -34.5890,
+        "lng": -58.4258,
+        "name": "Librería del Fondo",
+        "description": "Uruguay 239. 8vo B",
+        "dirreccion": "Costa Rica 4568",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
+        "type": "Librería"
+    },
+    {
+        "lat": -34.5985,
+        "lng": -58.4351,
+        "name": "El Libro de Arena",
+        "description": "Libros ilustrados",
+        "dirreccion": "Aráoz 594",
+        "categoría": "Independiente",
+        "horarios": "10:00 - 20:00",
+        "type": "Librería"
+    },
+    {
+        "lat": -34.6103,
+        "lng": -58.3733,
+        "name": "Librería de Ávila",
+        "description": "Histórica librería porteña",
+        "dirreccion": "Alsina 500",
         "categoría": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería"
