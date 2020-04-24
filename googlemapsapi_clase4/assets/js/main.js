@@ -1,6 +1,7 @@
 /* let map = ""; */
 let markersAll = [];
 let map = '';
+let prevInfoWindow = '';
 window.initMap = () => {
     // The location of Caba
     const caba = {
@@ -10,7 +11,7 @@ window.initMap = () => {
     // The map, centered at Caba
     map = new google.maps.Map(
         document.getElementById('map'), {
-            zoom: 12,
+            zoom: 13,
             center: caba,
             styles: styles,
             fullscreenControl: false,
@@ -18,7 +19,7 @@ window.initMap = () => {
                 mapTypeIds: []
             },
             zoomControlOptions: {
-                position: google.maps.ControlPosition.LEFT_CENTER
+                position: google.maps.ControlPosition.RIGHT_CENTER
             }
         });
     // The marker, positioned at Caba
@@ -27,8 +28,45 @@ window.initMap = () => {
         map: map
     }); */
     fetchMarkers(map)
+    let infoWindow = new google.maps.InfoWindow;
+
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            var marker = new google.maps.Marker({
+                position: pos,
+                icon: './assets/location.png',
+                map: map,
+                title: 'Tu ubicación'
+
+            });
+            marker.setMap(map);
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Su ubicación');
+            infoWindow.open(map);
+
+            map.setCenter(pos);
+        }, function () {
+            handleLocationError(true, infoWindow, map.getCenter());
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
 }
 
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+        'Error: The Geolocation service failed.' :
+        'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+}
 const addMarker = (map, marker) => {
     console.log(marker);
     const {
@@ -36,11 +74,18 @@ const addMarker = (map, marker) => {
         lng,
         name,
         description,
+        direction,
+        category,
+        horarios,
         type
     } = marker;
     const contentString = `<div><h2>${name}</h2>
     <h3>${type}</h3>
-    <p>${description}</p></div>`;
+    <p>${description}</p>
+    <p>Categoría: ${category}</p>
+    <p>Dirección: ${direction}</p>
+    <p>Horarios: ${horarios}</p>
+    </div>`;
     const infoWindow = new google.maps.InfoWindow({
         content: contentString
     });
@@ -61,7 +106,11 @@ const addMarker = (map, marker) => {
     });
     markerItem.setMap(map);
     markerItem.addListener('click', function () {
+        if (prevInfoWindow !== '') {
+            prevInfoWindow.close();
+        }
         infoWindow.open(map, markerItem);
+        prevInfoWindow = infoWindow;
     });
     markersAll.push(markerItem);
 }
@@ -77,12 +126,16 @@ const fetchMarkers = async (map) => {
         console.log(error);
     }
 }
-
+const handleFilterAll = document.querySelector('.todos');
 const handleFilterLibreria = document.querySelector('.libreria');
 const handleFilterLibreriaCafe = document.querySelector('.libreria_cafe');
 const handleFilterLibreriaCafeDisq = document.querySelector('.libreria_cafe_disq');
 const handleFilterLibreriaDisq = document.querySelector('.libreria_disq');
 
+handleFilterAll.addEventListener('click', (e) => {
+    e.preventDefault();
+    fetchMarkers(map);
+})
 handleFilterLibreria.addEventListener('click', (e) => {
     e.preventDefault();
     addMarkerFiltered('Librería');
