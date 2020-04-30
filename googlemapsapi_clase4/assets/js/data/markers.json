@@ -3,7 +3,7 @@
         "lng": -58.4427,
         "name": "Mandrágora Libros y Cultura",
         "description": "La librería más bella de VC",
-        "direction": "Vera 1906",
+        "address": "Vera 1906",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería y Café"
@@ -13,7 +13,7 @@
         "lng": -58.4401,
         "name": "Librería Rodríguez Villa Crespo",
         "description": "La 2da mejor librería de VC",
-        "direction": "Vera 1906",
+        "address": "Vera 1906",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería"
@@ -23,7 +23,7 @@
         "lng": -58.4277,
         "name": "Librería Rodríguez Almagro",
         "description": "Alta librería",
-        "direction": "Vera 1906",
+        "address": "Vera 1906",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería"
@@ -33,7 +33,7 @@
         "lng": -58.4298,
         "name": "Libros del Pasaje",
         "description": "Hermoso café",
-        "direction": "Vera 1906",
+        "address": "Vera 1906",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería y Café"
@@ -43,7 +43,7 @@
         "lng": -58.4361,
         "name": "Eterna Cadencia",
         "description": "Hermosa librería y café de la editorial",
-        "direction": "Vera 1906",
+        "address": "Vera 1906",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería y Café"
@@ -53,7 +53,7 @@
         "lng": -58.3747,
         "name": "Walrus Books",
         "description": "Libros usados en inglés",
-        "direction": "Vera 1906",
+        "address": "Vera 1906",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería"
@@ -63,7 +63,7 @@
         "lng": -58.3739,
         "name": "Fedro Libros",
         "description": "Librería y Disquería",
-        "direction": "Vera 1906",
+        "address": "Vera 1906",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería y Disquería"
@@ -73,7 +73,7 @@
         "lng": -58.3942,
         "name": "Ateneo Grand Splendid",
         "description": "La librería más grande de latinoamérica",
-        "direction": "Vera 1906",
+        "address": "Vera 1906",
         "category": "Comercial",
         "horarios": "10:00 - 20:00",
         "type": "Librería Café y Disquería"
@@ -83,7 +83,7 @@
         "lng": -58.4524,
         "name": "Céspedes Libros",
         "description": "La mejor librería de Colegiales",
-        "direction": "Vera 1906",
+        "address": "Vera 1906",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería"
@@ -93,7 +93,7 @@
         "lng": -58.3915,
         "name": "Waldhuter La Librería",
         "description": "Editorial, distribuidora y librería",
-        "direction": "Vera 1906",
+        "address": "Vera 1906",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería"
@@ -103,7 +103,7 @@
         "lng": -58.3863,
         "name": "Ediciones La Parte Maldita",
         "description": "Uruguay 239. 8vo B",
-        "direction": "Vera 1906",
+        "address": "Vera 1906",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería"
@@ -114,7 +114,7 @@
         "lng": -58.4411,
         "name": "Gould",
         "description": "Librería en Villa Crespo",
-        "direction": "Acevedo 388",
+        "address": "Acevedo 388",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería"
@@ -124,7 +124,7 @@
         "lng": -58.4442,
         "name": "La Internacional Argentina",
         "description": "Librería ",
-        "direction": "Padilla 865",
+        "address": "Padilla 865",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería"
@@ -134,7 +134,7 @@
         "lng": -58.4375,
         "name": "Cúspide Libros",
         "description": "En Village Caballito",
-        "direction": "Av. Rivadavia 5045",
+        "address": "Av. Rivadavia 5045",
         "category": "Comercial",
         "horarios": "10:00 - 20:00",
         "type": "Librería"
@@ -144,7 +144,7 @@
         "lng": -58.4103,
         "name": "Yenny",
         "description": "Yenny Abasto",
-        "direction": "Av. Corrientes 3247",
+        "address": "Av. Corrientes 3247",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería y Disquería"
@@ -154,7 +154,7 @@
         "lng": -58.3749,
         "name": "Witolda Libros",
         "description": "Editorial Ilustración",
-        "direction": "Venezuela 615",
+        "address": "Venezuela 615",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería"
@@ -164,7 +164,7 @@
         "lng": -58.4362,
         "name": "La Casa del Árbol",
         "description": "Uruguay 239. 8vo B",
-        "direction": "Av. Córdoba 5217",
+        "address": "Av. Córdoba 5217",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería y Disquería"
@@ -174,7 +174,7 @@
         "lng": -58.4258,
         "name": "Librería del Fondo",
         "description": "Uruguay 239. 8vo B",
-        "direction": "Costa Rica 4568",
+        "address": "Costa Rica 4568",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería"
@@ -184,7 +184,7 @@
         "lng": -58.4351,
         "name": "El Libro de Arena",
         "description": "Libros ilustrados",
-        "direction": "Aráoz 594",
+        "address": "Aráoz 594",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería"
@@ -194,7 +194,7 @@
         "lng": -58.3733,
         "name": "Librería de Ávila",
         "description": "Histórica librería porteña",
-        "direction": "Alsina 500",
+        "address": "Alsina 500",
         "category": "Independiente",
         "horarios": "10:00 - 20:00",
         "type": "Librería"

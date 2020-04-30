@@ -74,7 +74,7 @@ const addMarker = (map, marker) => {
         lng,
         name,
         description,
-        direction,
+        address,
         category,
         horarios,
         type
@@ -83,7 +83,7 @@ const addMarker = (map, marker) => {
     <h3>${type}</h3>
     <p>${description}</p>
     <p>Categoría: ${category}</p>
-    <p>Dirección: ${direction}</p>
+    <p>Dirección: ${address}</p>
     <p>Horarios: ${horarios}</p>
     </div>`;
     const infoWindow = new google.maps.InfoWindow({
