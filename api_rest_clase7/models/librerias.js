@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var libreriasSchema = new Schema({
-    id: {
+    _id: {
         type: String
     },
     lat: {
@@ -31,4 +31,4 @@ var libreriasSchema = new Schema({
     }
 });
 
-module.export = mongoose.model('Librerias', libreriasSchema, 'librerias_caba');
+module.exports = mongoose.model('Librerias', libreriasSchema, 'librerias_caba');
