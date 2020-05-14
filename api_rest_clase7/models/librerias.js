@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var libreriasSchema = new Schema({
-    _id: {
+    id: {
         type: String
     },
     lat: {

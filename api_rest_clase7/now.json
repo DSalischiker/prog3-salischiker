@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "builds": [{
+        "src": "app.js",
+        "use": "@now/node-server"
+    }],
+    "routes": [{
+            "src": "/librerias_caba",
+            "dest": "/app.js",
+            "methods": [
+                "GET"
+            ]
+        },
+        {
+            "src": "/",
+            "dest": "/app.js",
+            "methods": [
+                "GET"
+            ]
+        }
+    ]
+}
