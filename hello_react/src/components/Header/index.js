@@ -1,12 +1,13 @@
 import React from 'react';
-
-const Header = props => {
+import Boton from '../Boton';
+const Header = ({ name }) => {
     return (
         <header className="App-header">
             {/* <img src={logo} className="App-logo" alt="logo" /> */}
             <p>
-                Edit <code>src/components/App/index.js</code> and save to reload.
-        </p>
+                Bienvenido {name}
+            </p>
+            <Boton caption='Boton1' />
             <a
                 className="App-link"
                 href="https://reactjs.org"
